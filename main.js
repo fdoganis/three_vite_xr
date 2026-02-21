@@ -104,6 +104,7 @@ timer.connect(document);
 // Main loop
 const animate = () => {
 
+  timer.update();
   const delta = timer.getDelta();
   const elapsed = timer.getElapsed();
 
