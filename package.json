@@ -1,6 +1,6 @@
 {
-  "name": "three_vite",
-  "version": "0.0.5",
+  "name": "three_vite_xr",
+  "version": "0.0.7",
   "author": "fdoganis",
   "license": "MIT",
   "type": "module",
@@ -14,19 +14,15 @@
     "cloud": "cloudflared tunnel --url http://localhost:5173/"
   },
   "devDependencies": {
-    "@types/three": "^0.173.0",
+    "@types/three": "^0.183.1",
     "http-server": "^14.1.1",
-    "vite": "^6.1.1",
-    "vite-plugin-glsl": "^0.4.0",
-    "vite-plugin-static-copy": "^2.2.0"
-  },
-  "overrides": {
-    "esbuild": "^0.25.0",
-    "nanoid": "^3.3.8"
+    "vite": "^7.3.1",
+    "vite-plugin-glsl": "^1.5.5",
+    "vite-plugin-static-copy": "^3.2.0"
   },
   "dependencies": {
-    "@iwer/devui": "^0.1.1",
-    "iwer": "^1.0.4",
-    "three": "^0.173.0"
+    "@iwer/devui": "^1.1.2",
+    "iwer": "^2.1.1",
+    "three": "^0.183.1"
   }
 }
