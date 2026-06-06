@@ -18,10 +18,6 @@ import {
   WebGLRenderer
 } from 'three';
 
-// XR Emulator
-import { DevUI } from '@iwer/devui';
-import { XRDevice, metaQuest3 } from 'iwer';
-
 // XR
 import { XRButton } from 'three/addons/webxr/XRButton.js';
 
@@ -54,43 +50,6 @@ import {
 
 // Example of hard link to official repo for data, if needed
 // const MODEL_PATH = 'https://raw.githubusercontent.com/mrdoob/three.js/r173/examples/models/gltf/LeePerrySmith/LeePerrySmith.glb';
-
-async function setupXR(xrMode) {
-
-  if (xrMode !== 'immersive-vr') return;
-
-  // iwer setup: emulate vr session
-  let nativeWebXRSupport = false;
-  if (navigator.xr) {
-    nativeWebXRSupport = await navigator.xr.isSessionSupported(xrMode);
-  }
-
-  if (!nativeWebXRSupport) {
-    const xrDevice = new XRDevice(metaQuest3);
-    xrDevice.installRuntime();
-    xrDevice.fovy = (75 / 180) * Math.PI;
-    xrDevice.ipd = 0;
-    window.xrdevice = xrDevice;
-    xrDevice.controllers.right.position.set(0.15649, 1.43474, -0.38368);
-    xrDevice.controllers.right.quaternion.set(
-      0.14766305685043335,
-      0.02471366710960865,
-      -0.0037767395842820406,
-      0.9887216687202454,
-    );
-    xrDevice.controllers.left.position.set(-0.15649, 1.43474, -0.38368);
-    xrDevice.controllers.left.quaternion.set(
-      0.14766305685043335,
-      0.02471366710960865,
-      -0.0037767395842820406,
-      0.9887216687202454,
-    );
-    new DevUI(xrDevice);
-  }
-}
-
-await setupXR('immersive-ar');
-
 
 
 // INSERT CODE HERE

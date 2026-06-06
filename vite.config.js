@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import glsl from 'vite-plugin-glsl';
+import { injectIWER } from "@iwsdk/vite-plugin-iwer";
 
 export default defineConfig({
     base: "/three_vite_xr",
@@ -36,7 +37,15 @@ export default defineConfig({
                 { src: 'node_modules/three/examples/jsm/libs/draco/gltf/draco_wasm_wrapper.js', dest: 'jsm/libs/draco/gltf/' }
             ]
         }),
-        glsl()
+        glsl(),
+        injectIWER({
+            device: "metaQuest3",
+            activation: "localhost",
+            verbose: true,
+            sem: {
+                defaultScene: "living_room"
+            }
+        })
     ]
 })
 

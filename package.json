@@ -1,6 +1,6 @@
 {
   "name": "three_vite_xr",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "author": "fdoganis",
   "license": "MIT",
   "type": "module",
@@ -14,15 +14,23 @@
     "cloud": "cloudflared tunnel --url http://localhost:5173/"
   },
   "devDependencies": {
-    "@types/three": "^0.183.1",
+    "@iwsdk/vite-plugin-iwer": "^0.2.2",
+    "@types/three": "^0.184.0",
     "http-server": "^14.1.1",
-    "vite": "^7.3.1",
-    "vite-plugin-glsl": "^1.5.5",
-    "vite-plugin-static-copy": "^3.2.0"
+    "vite-plugin-glsl": "^1.6.0",
+    "vite-plugin-static-copy": "^4.1.1"
+  },
+  "overrides": {
+    "vite": "^8.0.16",
+    "styled-components": "^6.4.2"
   },
   "dependencies": {
     "@iwer/devui": "^1.1.2",
-    "iwer": "^2.1.1",
-    "three": "^0.183.1"
+    "@iwer/sem": "^0.2.5",
+    "iwer": "^2.1.0",
+    "three": "^0.184.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
