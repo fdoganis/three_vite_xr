@@ -28,6 +28,22 @@ Install [Node.js](https://nodejs.org)
   - Edit your code : your changes are reflected instantly!
 - `npm run build` : packages all code and resources into the `dist` folder, ready for deployment.
 
+## WARNING
+
+On Chrome >= 147 : Meta Immersive-Web-Emulator can not enter WebXR.
+
+See https://github.com/mrdoob/three.js/issues/33414
+
+There seems to be an issue with polyfills related to browsers now supporting [WebXR Layers](https://www.w3.org/TR/webxrlayers-1/)
+
+As a consequence the "Enter XR" button in Meta's WebXR Emulator has no effect.
+
+### Bypass:
+
+- None as of 2026-06-06
+- Check issue for updates and "hacks"
+- Or use Firefox ;)
+
 ## HTTPS
 
 HTTPS is required to use the WebXR API
